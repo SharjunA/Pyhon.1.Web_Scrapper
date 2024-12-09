@@ -8,9 +8,11 @@ def insert_data(collection_name, data):
     db = get_database()
     collection = db[collection_name]
     
-    if isinstance(data, list):  # If data is a list for multiple documents
+    # If data is a list for multiple documents
+    if isinstance(data, list):  
         collection.insert_many(data)
         print(f"Inserted {len(data)} records into {collection_name}.")
-    else:  # For single document
+    # For single document
+    else:  
         collection.insert_one(data)
         print(f"Inserted one record into {collection_name}.")
