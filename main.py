@@ -1,8 +1,8 @@
-from bs4 import BeautifulSoup
-import requests
+from scraper import scrape_data
+from database import insert_data
 
-url = 'https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020892'
-page = requests.get(url)
-soup = BeautifulSoup(page.text,'html')
-
-print(soup)
+if __name__ == '__main__':
+    data = scrape_data()
+    
+    if data:
+        insert_data("NDA_Products", data) 
