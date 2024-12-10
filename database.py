@@ -24,7 +24,8 @@ def insert_data(collection, data, url):
                 "Products on NDA": data,
                 "Metadata": {
                     "Timestamp": timestamp,
-                    "Source URL": url
+                    "Source URL": url,
+                    "Number of Records": len(data)
                 }
             }
             
