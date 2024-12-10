@@ -1,42 +1,33 @@
-import requests
-from bs4 import BeautifulSoup
-from datetime import datetime
+import logging
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+import log_config
 
-def scrape_data():
-    
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36'
-    }
-    
-    data = []
-    url = 'https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm?event=overview.process&ApplNo=020892'
-    page = requests.get(url, headers=headers, allow_redirects=True)
-    soup = BeautifulSoup(page.text, 'html.parser')
-    
-    print(soup.prettify())
-    
-    # #accessing the table
-    # table = soup.find('table', {'class' : 'table table-bordered dataTable no-footer dtr-inline collapsed'})
-    # #extracting all rows
-    # rows = table.find_all('tr')
-    
-    # for row in rows:
-    #     cells = row.find_all('td')  # Extract all cells
-    #     print([cell.text.strip() for cell in cells])
-        
-scrape_data()
-    #     if cells:
-    #         record = {
-    #             "drug_name": cells[0].text.strip(),
-    #             "active_ingredient": cells[1].text.strip(),
-    #             "strength": cells[2].text.strip(),
-    #         }
-    #         data.append(record)
+def scrape_data(url):
 
-    # # Add metadata
-    # for record in data:
-    #     record["metadata"] = {
-    #         "timestamp": datetime.utcnow().isoformat(),
-    #         "source_url": url
-    #     }
-    # return data
+    try:
+        # Initialize Selenium WebDriver
+        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        driver.get(url)
+
+        # Wait for the page to load
+        driver.implicitly_wait(10)
+
+        # Locate the table on the page
+        table = driver.find_element(By.TAG_NAME, "table")
+        rows = table.find_elements(By.TAG_NAME, "tr")
+
+        # Extract data from the table
+        data = []
+        for row in rows:
+            cols = row.find_elements(By.TAG_NAME, "td")
+            data.append([col.text.strip() for col in cols])
+
+        driver.quit()  # Close the browser
+        return data
+
+    except Exception as e:
+        logging.error(f"Error while scraping data: {e}")
+        return []
