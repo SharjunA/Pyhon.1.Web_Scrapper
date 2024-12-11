@@ -1,6 +1,5 @@
 from scraper import scrape_data
 from database import connect_to_mongodb, insert_data
-from downloader import download_pdfs
 from log_config import logging
 
 def main():
@@ -30,7 +29,8 @@ def main():
                         
     except Exception as e:
         logging.error(f"Scraping failed after maximum retries: {e}")
-        print("Scraping process failed. Check logs for details.")
-
+        print("Scraping process not completed. Check logs for details.")
+    
+    
 if __name__ == "__main__":
     main()

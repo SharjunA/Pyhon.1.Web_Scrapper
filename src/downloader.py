@@ -6,7 +6,7 @@ def download_pdfs(driver, download_dir = "downloads"):
     
     download_choice = input("Would you like to download PDFs? (y/n): ").strip().lower()
         
-    if download_choice not in ['y', 'Y', 'n', 'N']:
+    if download_choice not in ['y', 'n']:
         print("Invalid input. Please enter 'y' for Yes or 'n' for No.")
 
     if download_choice.lower() == 'y':

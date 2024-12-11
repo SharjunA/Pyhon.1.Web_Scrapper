@@ -12,7 +12,7 @@ def scrape_data(url):
 
     try:
         # Initialize Selenium WebDriver
-        driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+        driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
         driver.get(url)
 
         # Wait for the page to load
@@ -30,6 +30,7 @@ def scrape_data(url):
             row_data = {}
             for header, col in zip(headers, cols):
                 row_data[header] = col.text
+
             if row_data:
                 data.append(row_data)
                 

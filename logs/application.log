@@ -1,5 +1,0 @@
-2024-12-10 21:15:08,707 - INFO - ====== WebDriver manager ======
-2024-12-10 21:15:10,201 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 21:15:10,393 - INFO - Get LATEST chromedriver version for google-chrome
-2024-12-10 21:15:10,577 - INFO - Driver [C:\Users\sharj\.wdm\drivers\chromedriver\win64\131.0.6778.87\chromedriver-win32/chromedriver.exe] found in cache
-2024-12-10 21:15:24,037 - INFO - Successfully inserted 1 drug records with metadata.
