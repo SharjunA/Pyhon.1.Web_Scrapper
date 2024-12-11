@@ -18,8 +18,8 @@ def main():
         # MongoDB connection and data storage
         collection = connect_to_mongodb(
             uri = "mongodb://localhost:27017/",
-            db_name = "drug_data",
-            collection_name = "drug_info"
+            db_name = "nda_data",
+            collection_name = "products"
         )
         
         if collection is not None:
