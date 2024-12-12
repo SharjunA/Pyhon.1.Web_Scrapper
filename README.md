@@ -29,7 +29,7 @@ Drug Name, Active Ingredients, Strength, Dosage Form/Route, Marketing Status, TE
 ## **Project Structure**
 ```
 Web_Scrapper/
-├── lib/                  # Core project logic
+├── src/                  # Core project logic
 │   ├── main.py           # Orchestrates scraping tasks
 │   ├── scraper.py        # Handles scraping logic
 │   ├── database.py       # Manages MongoDB interactions
