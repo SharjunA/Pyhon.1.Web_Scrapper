@@ -99,3 +99,28 @@ python lib/scheduler.py
 
 **Download Files:**
 - Enable optional PDF downloads when prompted.
+
+## **Sample Output**
+**Scraped Data Document**
+(json)
+```
+{
+  "Products on NDA": [
+    {
+      "Drug Name": "VALSTAR PRESERVATIVE FREE",
+      "Active Ingredients": "VALRUBICIN",
+      "Strength": "40MG/ML",
+      "Dosage Form/Route": "SOLUTION;INTRAVESICAL",
+      "Marketing Status": "Prescription",
+      "TE Code": "AO",
+      "RLD": "Yes",
+      "RS": "Yes"
+    }
+  ],
+  "Metadata": {
+    "Timestamp": "2024-12-11T19:16:28.687Z",
+    "Source URL": "https://example.com",
+    "Number of Records": 1
+  }
+}
+```
