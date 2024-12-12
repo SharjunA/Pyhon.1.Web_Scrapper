@@ -5,9 +5,7 @@ import os
 os.makedirs("logs", exist_ok = True)
 
 # Suppress TensorFlow logs
-os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # Disable TensorFlow INFO logs
-tensorflow_logger = logging.getLogger('tensorflow')
-tensorflow_logger.setLevel(logging.ERROR)
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"
 
 # Configure logging settings
 logging.basicConfig(
