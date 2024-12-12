@@ -14,7 +14,7 @@ def download_pdfs(driver, download_dir = "downloads"):
     else:
         return
     
-    # Downloads all PDF links on the current page.
+    # Ensure the downloads directory exists
     os.makedirs(download_dir, exist_ok=True)
 
     links = driver.find_elements(By.XPATH, "//a[contains(@href, '.pdf')]")
