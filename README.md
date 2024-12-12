@@ -5,7 +5,7 @@ This project is an FDA Drug Information Scraper that extracts detailed drug info
 
 **Drug Data Extraction:**
 - Captures detailed drug information including:
-Drug Name, Active Ingredients, Strength, Dosage Form/Route, Marketing Status, TE Code, RLD, and RS.
+Drug Name, Active Ingredients, Strength, Dosage Form/Route, Marketing Status, TE Code, RLD and RS.
 
 **Metadata Collection:**
 - Stores metadata for full traceability, including:
@@ -18,10 +18,10 @@ Drug Name, Active Ingredients, Strength, Dosage Form/Route, Marketing Status, TE
 
 **Error Handling and Logging:**
 - Implements retry mechanisms for handling network or structural issues.
-- Logs the scraping process, errors, and database interactions in a dedicated log file.
+- Logs the scraping process, errors and database interactions in a dedicated log file.
 
 **File Downloads:**
-- Optionally downloads associated documents (e.g., drug labels and letters) as PDFs into a local directory.
+- Optionally downloads associated documents (e.g. drug labels and letters) as PDFs into a local directory.
 
 **Scheduling:**
 - Automates the scraping process using a scheduler.
