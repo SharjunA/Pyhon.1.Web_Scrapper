@@ -18,7 +18,7 @@ def main():
         # MongoDB connection and data storage
         collection = connect_to_mongodb(
             uri = "mongodb://localhost:27017/",
-            db_name = "nda_data",
+            db_name = "fda_data",
             collection_name = "products"
         )
         
